@@ -1,1 +1,1 @@
-%h1 Bienvenido #{current_user.email}
+%h1= "Bienvenido #{current_user.email? ? current_user.email : 'Usuario'}"
