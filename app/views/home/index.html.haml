@@ -1,1 +1,4 @@
-%h1= "Bienvenido #{current_user.email? ? current_user.email : 'Usuario'}"
+- if user_signed_in?
+  %h1= "Bienvenido #{current_user.email}"
+- else
+  %h1 Bienvenido
