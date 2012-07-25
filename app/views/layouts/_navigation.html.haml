@@ -1,0 +1,29 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      - if user_signed_in?
+        %a.brand{:href => '/'} Norris Cards
+      - else  
+        %a.brand{:href => "/"} Norris Cards
+      .nav-collapse
+        %ul.nav
+          - if user_signed_in?
+            %li.active
+              %a{:href => '/'} Inicio
+          -else
+            %li.active
+              %a{:href => "/"} Inicio
+      .nav-collapse-right
+        %ul.nav
+          - if user_signed_in?
+            %li
+              = link_to('Editar', edit_user_path(current_user))
+            %li
+              = link_to('Salir', destroy_user_session_path, :method=>'delete')
+          - else
+            %li
+              = link_to('Iniciar sesión', new_user_session_path)

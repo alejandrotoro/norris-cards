@@ -26,12 +26,12 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
+  # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
-
+  
   # twitter bootstrap
-  gem "bootstrap-sass", "~> 2.0.2"
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 end
 
 gem 'jquery-rails'
@@ -50,3 +50,7 @@ gem 'unicorn'
 
 # To use debugger
 # gem 'ruby-debug'
+
+group :development do
+  gem 'heroku'
+end
