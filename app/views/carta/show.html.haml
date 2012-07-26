@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Id baraja:
+  = @cartum.id_baraja
+%p
+  %b Nombre:
+  = @cartum.nombre
+%p
+  %b Numeroletra:
+  = @cartum.numeroletra
+%p
+  %b Imagen:
+  = @cartum.imagen
+%p
+  %b Letras:
+  = @cartum.letras
+%p
+  %b Colores:
+  = @cartum.colores
+
+= link_to 'Edit', edit_cartum_path(@cartum)
+\|
+= link_to 'Back', carta_path

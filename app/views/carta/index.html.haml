@@ -1,0 +1,29 @@
+%h1 Listing carta
+
+%table
+  %tr
+    %th Id baraja
+    %th Nombre
+    %th Numeroletra
+    %th Imagen
+    %th Letras
+    %th Colores
+    %th
+    %th
+    %th
+
+  - @carta.each do |cartum|
+    %tr
+      %td= cartum.id_baraja
+      %td= cartum.nombre
+      %td= cartum.numeroletra
+      %td= cartum.imagen
+      %td= cartum.letras
+      %td= cartum.colores
+      %td= link_to 'Show', cartum
+      %td= link_to 'Edit', edit_cartum_path(cartum)
+      %td= link_to 'Destroy', cartum, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Cartum', new_cartum_path

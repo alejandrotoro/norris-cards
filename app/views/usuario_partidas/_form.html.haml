@@ -1,0 +1,16 @@
+= form_for @usuario_partida do |f|
+  -if @usuario_partida.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@usuario_partida.errors.count, "error")} prohibited this usuario_partida from being saved:"
+      %ul
+        - @usuario_partida.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :partida_id
+    = f.number_field :partida_id
+  .field
+    = f.label :usuario_id
+    = f.number_field :usuario_id
+  .actions
+    = f.submit 'Save'

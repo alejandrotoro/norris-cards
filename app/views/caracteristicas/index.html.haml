@@ -1,0 +1,19 @@
+%h1 Listing caracteristicas
+
+%table
+  %tr
+    %th Nombre
+    %th
+    %th
+    %th
+
+  - @caracteristicas.each do |caracteristica|
+    %tr
+      %td= caracteristica.nombre
+      %td= link_to 'Show', caracteristica
+      %td= link_to 'Edit', edit_caracteristica_path(caracteristica)
+      %td= link_to 'Destroy', caracteristica, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Caracteristica', new_caracteristica_path

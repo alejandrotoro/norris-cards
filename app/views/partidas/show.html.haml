@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Baraja:
+  = @partida.baraja_id
+%p
+  %b Creador:
+  = @partida.creador_id
+%p
+  %b Ganador:
+  = @partida.ganador_id
+%p
+  %b Fecha fin:
+  = @partida.fecha_fin
+%p
+  %b Cantidad jugadores:
+  = @partida.cantidad_jugadores
+
+= link_to 'Edit', edit_partida_path(@partida)
+\|
+= link_to 'Back', partidas_path

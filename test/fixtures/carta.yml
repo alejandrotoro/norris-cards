@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_baraja: 1
+  nombre: MyString
+  numeroletra: MyString
+  imagen: MyString
+  letras: MyString
+  colores: MyString
+
+two:
+  id_baraja: 1
+  nombre: MyString
+  numeroletra: MyString
+  imagen: MyString
+  letras: MyString
+  colores: MyString

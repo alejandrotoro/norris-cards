@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  partida_id: 1
+  usuario_id: 1
+
+two:
+  partida_id: 1
+  usuario_id: 1

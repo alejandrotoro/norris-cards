@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  baraja_id: 1
+  creador_id: 1
+  ganador_id: 1
+  fecha_fin: 2012-07-25
+  cantidad_jugadores: 1
+
+two:
+  baraja_id: 1
+  creador_id: 1
+  ganador_id: 1
+  fecha_fin: 2012-07-25
+  cantidad_jugadores: 1

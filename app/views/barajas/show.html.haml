@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @baraja.nombre
+%p
+  %b Imagen:
+  = @baraja.imagen
+%p
+  %b Edicion:
+  = @baraja.edicion
+
+= link_to 'Edit', edit_baraja_path(@baraja)
+\|
+= link_to 'Back', barajas_path

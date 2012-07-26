@@ -1,0 +1,12 @@
+%h2 Iniciar Sesión
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  %p
+    = f.email_field :email, :class => "span3", :placeholder => "Correo Electrónico"
+  %p
+    = f.password_field :password, :class => "span3", :placeholder => "Contraseña"
+  - if devise_mapping.rememberable?
+    %p
+      = f.check_box :remember_me
+      = f.label "Recordarme"
+  %div= f.submit "Iniciar Sesión"
+= render "devise/shared/links"

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Carta:
+  = @caracteristica_cartum.carta_id
+%p
+  %b Caracterisitca:
+  = @caracteristica_cartum.caracterisitca_id
+%p
+  %b Valor:
+  = @caracteristica_cartum.valor
+
+= link_to 'Edit', edit_caracteristica_cartum_path(@caracteristica_cartum)
+\|
+= link_to 'Back', caracteristica_carta_path

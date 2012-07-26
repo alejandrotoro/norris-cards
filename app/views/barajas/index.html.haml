@@ -1,0 +1,23 @@
+%h1 Listing barajas
+
+%table
+  %tr
+    %th Nombre
+    %th Imagen
+    %th Edicion
+    %th
+    %th
+    %th
+
+  - @barajas.each do |baraja|
+    %tr
+      %td= baraja.nombre
+      %td= baraja.imagen
+      %td= baraja.edicion
+      %td= link_to 'Show', baraja
+      %td= link_to 'Edit', edit_baraja_path(baraja)
+      %td= link_to 'Destroy', baraja, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Baraja', new_baraja_path

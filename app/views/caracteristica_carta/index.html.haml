@@ -1,0 +1,23 @@
+%h1 Listing caracteristica_carta
+
+%table
+  %tr
+    %th Carta
+    %th Caracterisitca
+    %th Valor
+    %th
+    %th
+    %th
+
+  - @caracteristica_carta.each do |caracteristica_cartum|
+    %tr
+      %td= caracteristica_cartum.carta_id
+      %td= caracteristica_cartum.caracterisitca_id
+      %td= caracteristica_cartum.valor
+      %td= link_to 'Show', caracteristica_cartum
+      %td= link_to 'Edit', edit_caracteristica_cartum_path(caracteristica_cartum)
+      %td= link_to 'Destroy', caracteristica_cartum, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Caracteristica cartum', new_caracteristica_cartum_path

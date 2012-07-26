@@ -1,0 +1,25 @@
+= form_for @partida do |f|
+  -if @partida.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@partida.errors.count, "error")} prohibited this partida from being saved:"
+      %ul
+        - @partida.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :baraja_id
+    = f.number_field :baraja_id
+  .field
+    = f.label :creador_id
+    = f.number_field :creador_id
+  .field
+    = f.label :ganador_id
+    = f.number_field :ganador_id
+  .field
+    = f.label :fecha_fin
+    = f.date_select :fecha_fin
+  .field
+    = f.label :cantidad_jugadores
+    = f.number_field :cantidad_jugadores
+  .actions
+    = f.submit 'Save'

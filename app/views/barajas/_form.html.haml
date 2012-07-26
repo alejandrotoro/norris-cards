@@ -1,0 +1,19 @@
+= form_for @baraja do |f|
+  -if @baraja.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@baraja.errors.count, "error")} prohibited this baraja from being saved:"
+      %ul
+        - @baraja.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nombre
+    = f.text_field :nombre
+  .field
+    = f.label :imagen
+    = f.text_field :imagen
+  .field
+    = f.label :edicion
+    = f.text_field :edicion
+  .actions
+    = f.submit 'Save'

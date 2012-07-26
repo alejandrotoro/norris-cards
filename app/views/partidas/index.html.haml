@@ -1,0 +1,27 @@
+%h1 Listing partidas
+
+%table
+  %tr
+    %th Baraja
+    %th Creador
+    %th Ganador
+    %th Fecha fin
+    %th Cantidad jugadores
+    %th
+    %th
+    %th
+
+  - @partidas.each do |partida|
+    %tr
+      %td= partida.baraja_id
+      %td= partida.creador_id
+      %td= partida.ganador_id
+      %td= partida.fecha_fin
+      %td= partida.cantidad_jugadores
+      %td= link_to 'Show', partida
+      %td= link_to 'Edit', edit_partida_path(partida)
+      %td= link_to 'Destroy', partida, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Partida', new_partida_path

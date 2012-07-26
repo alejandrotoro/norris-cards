@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @caracteristica.nombre
+
+= link_to 'Edit', edit_caracteristica_path(@caracteristica)
+\|
+= link_to 'Back', caracteristicas_path

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  carta_id: 1
+  caracterisitca_id: 1
+  valor: 1.5
+
+two:
+  carta_id: 1
+  caracterisitca_id: 1
+  valor: 1.5

@@ -1,4 +1,15 @@
-- if user_signed_in?
-  %h1= "Bienvenido #{current_user.email}"
-- else
-  %h1 Bienvenido
+.container
+  .hero-unit
+    %h1 Norris Cards
+    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id libero nisi. Vestibulum mi sem, aliquet eget porttitor et, porttitor quis metus. Cras facilisis rhoncus turpis non elementum. Integer ac libero diam. Nunc sed arcu ut risus porta fringilla ut sed leo. Curabitur mollis erat id risus aliquam tristique. 
+    %p
+      %a.btn.btn-primary.btn-success Descargar
+  .row
+    .span4
+    .span4
+    .span4
+      %h2 Usuarios
+      = render "devise/sessions/new"
+  %hr
+    %footer
+      %p Norris Cards

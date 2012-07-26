@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Partida:
+  = @usuario_partida.partida_id
+%p
+  %b Usuario:
+  = @usuario_partida.usuario_id
+
+= link_to 'Edit', edit_usuario_partida_path(@usuario_partida)
+\|
+= link_to 'Back', usuario_partidas_path

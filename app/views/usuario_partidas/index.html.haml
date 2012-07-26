@@ -1,0 +1,21 @@
+%h1 Listing usuario_partidas
+
+%table
+  %tr
+    %th Partida
+    %th Usuario
+    %th
+    %th
+    %th
+
+  - @usuario_partidas.each do |usuario_partida|
+    %tr
+      %td= usuario_partida.partida_id
+      %td= usuario_partida.usuario_id
+      %td= link_to 'Show', usuario_partida
+      %td= link_to 'Edit', edit_usuario_partida_path(usuario_partida)
+      %td= link_to 'Destroy', usuario_partida, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Usuario partida', new_usuario_partida_path
