@@ -5,7 +5,8 @@
     %th Id baraja
     %th Nombre
     %th Numeroletra
-    %th Imagen
+    %th Imagen Small
+    %th Imagen Big
     %th Letras
     %th Colores
     %th
@@ -17,7 +18,10 @@
       %td= cartum.id_baraja
       %td= cartum.nombre
       %td= cartum.numeroletra
-      %td= cartum.imagen
+      %td
+        %img{:src => "#{cartum.imagen_small}"}
+      %td
+        %img{:src => "#{cartum.imagen_big}"}
       %td= cartum.letras
       %td= cartum.colores
       %td= link_to 'Show', cartum

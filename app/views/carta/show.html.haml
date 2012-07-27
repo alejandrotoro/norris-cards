@@ -10,8 +10,11 @@
   %b Numeroletra:
   = @cartum.numeroletra
 %p
-  %b Imagen:
-  = @cartum.imagen
+  %b Imagen Small:
+  %img{:src => "#{@cartum.imagen_small}"}
+%p
+  %b Imagen Big:
+  %img{:src => "#{@cartum.imagen_big}"}
 %p
   %b Letras:
   = @cartum.letras

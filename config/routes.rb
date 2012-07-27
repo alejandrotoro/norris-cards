@@ -8,13 +8,12 @@ NorrisCards::Application.routes.draw do
 
   resources :caracteristicas
 
-  resources :carta
-
   authenticated :user do
     root :to => 'users#dashboard', :as => :user_root
   end
   
   resources :barajas
+  resources :carta
 
   devise_for :users
   resources :users

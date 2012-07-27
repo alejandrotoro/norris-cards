@@ -17,9 +17,12 @@
     = f.number_field :ganador_id
   .field
     = f.label :fecha_fin
-    = f.date_select :fecha_fin
+    = f.text_field :fecha_fin
   .field
     = f.label :cantidad_jugadores
     = f.number_field :cantidad_jugadores
+  .field
+    = f.label :estado
+    = f.number_field :estado
   .actions
     = f.submit 'Save'

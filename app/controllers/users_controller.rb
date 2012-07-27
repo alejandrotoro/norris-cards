@@ -48,6 +48,7 @@ class UsersController < ApplicationController
   
   def dashboard
     @user = current_user
+    @barajas = Baraja.all
   end
   
 end

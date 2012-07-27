@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726125005) do
+ActiveRecord::Schema.define(:version => 20120727012435) do
 
   create_table "barajas", :force => true do |t|
     t.string   "nombre"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20120726125005) do
   create_table "caracteristica_carta", :force => true do |t|
     t.integer  "carta_id"
     t.integer  "caracterisitca_id"
-    t.float    "valor"
+    t.string   "valor"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
@@ -53,8 +53,9 @@ ActiveRecord::Schema.define(:version => 20120726125005) do
     t.integer  "ganador_id"
     t.date     "fecha_fin"
     t.integer  "cantidad_jugadores"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.boolean  "estado",             :default => false
   end
 
   create_table "users", :force => true do |t|

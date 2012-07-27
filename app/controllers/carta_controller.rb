@@ -3,7 +3,7 @@ class CartaController < ApplicationController
   # GET /carta.json
   def index
     @carta = Cartum.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @carta }

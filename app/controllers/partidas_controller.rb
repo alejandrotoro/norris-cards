@@ -2,7 +2,7 @@ class PartidasController < ApplicationController
   # GET /partidas
   # GET /partidas.json
   def index
-    @partidas = Partida.all
+    @partidas = Partida.where(:estado => false)
 
     respond_to do |format|
       format.html # index.html.erb
