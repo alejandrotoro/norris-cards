@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20120727012435) do
   create_table "caracteristica_carta", :force => true do |t|
     t.integer  "carta_id"
     t.integer  "caracterisitca_id"
-    t.string   "valor"
+    t.float    "valor"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
