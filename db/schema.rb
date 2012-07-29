@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727012435) do
+ActiveRecord::Schema.define(:version => 20120729031902) do
 
   create_table "barajas", :force => true do |t|
     t.string   "nombre"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20120727012435) do
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
     t.boolean  "estado",             :default => false
+    t.string   "nombre"
   end
 
   create_table "users", :force => true do |t|

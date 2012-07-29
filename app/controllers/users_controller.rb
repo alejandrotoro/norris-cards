@@ -51,4 +51,24 @@ class UsersController < ApplicationController
     @barajas = Baraja.all
   end
   
+  def puntajes
+    @user = User.find(params[:id])
+    @partidas = Partida.find_by_ganador_id(@user)
+
+    respond_to do |format|
+      unless @partidas.nil?
+        format.html { render action: "dashboard" }
+        format.json { render json: "Este usuario no ha ganado partidas aun." }
+      else
+        format.html { redirect_to users_url }
+        format.json { 
+          render :json => {
+            :partidas => @partidas,
+            :usuario => @user
+          }
+        }
+      end
+    end
+  end
+  
 end
