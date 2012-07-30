@@ -1,0 +1,25 @@
+%h1 Listing usuario_carta
+
+%table
+  %tr
+    %th Partida
+    %th Usuario
+    %th Carta
+    %th Orden
+    %th
+    %th
+    %th
+
+  - @usuario_carta.each do |usuario_cartum|
+    %tr
+      %td= usuario_cartum.partida_id
+      %td= usuario_cartum.usuario_id
+      %td= usuario_cartum.carta_id
+      %td= usuario_cartum.orden
+      %td= link_to 'Show', usuario_cartum
+      %td= link_to 'Edit', edit_usuario_cartum_path(usuario_cartum)
+      %td= link_to 'Destroy', usuario_cartum, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Usuario cartum', new_usuario_cartum_path

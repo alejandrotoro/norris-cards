@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Partida:
+  = @usuario_cartum.partida_id
+%p
+  %b Usuario:
+  = @usuario_cartum.usuario_id
+%p
+  %b Carta:
+  = @usuario_cartum.carta_id
+%p
+  %b Orden:
+  = @usuario_cartum.orden
+
+= link_to 'Edit', edit_usuario_cartum_path(@usuario_cartum)
+\|
+= link_to 'Back', usuario_carta_path

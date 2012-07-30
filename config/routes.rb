@@ -1,5 +1,7 @@
 NorrisCards::Application.routes.draw do
   
+  resources :usuario_carta
+
   match '/puntajes' => 'users#puntajes'
   
   resources :usuario_partidas

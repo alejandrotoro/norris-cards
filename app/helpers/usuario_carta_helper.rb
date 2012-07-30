@@ -1,0 +1,2 @@
+module UsuarioCartaHelper
+end

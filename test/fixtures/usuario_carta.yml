@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  partida_id: 
+  usuario_id: 
+  carta_id: 
+  orden: 1
+
+two:
+  partida_id: 
+  usuario_id: 
+  carta_id: 
+  orden: 1
