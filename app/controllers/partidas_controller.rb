@@ -15,13 +15,8 @@ class PartidasController < ApplicationController
     @service.to_json
     
     respond_to do |format|
-      if @partidas.count > 0
-        format.html # index.html.erb
-        format.json { render json: @service }
-      else
-        format.html
-        format.json {render json: "No hay partidas activas, puedes crear una"}
-      end
+      format.html # index.html.erb
+      format.json { render json: @service }
     end
   end
 
