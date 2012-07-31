@@ -50,11 +50,11 @@ class UsuarioPartidasController < ApplicationController
           format.json { render json: @usuario_partida, status: :created, location: @usuario_partida }
         else
           format.html { render action: "new" }
-          format.json { render json: @usuario_partida.errors, status: :unprocessable_entity }
+          format.json { render json: 'null' }
         end
       else  
         format.html { render action: "new" }
-        format.json { render json: @usuario_partida.errors, status: :unprocessable_entity, notice: 'Lo sentimos, la partida esta completa.' }
+        format.json { render json: 'null' }
       end
     end
   end
