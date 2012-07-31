@@ -8,7 +8,7 @@ class PartidasController < ApplicationController
       @creador = User.find(partida.creador_id)
       @baraja = Baraja.find(partida.baraja_id)
       usuarios = UsuarioPartida.where(:partida_id => partida.id).count
-      @service << "{'id_partida'=>#{partida.id},'cantidad_jugadores'=>#{partida.cantidad_jugadores},'usuarios'=>#{usuarios},'id_baraja'=>#{@baraja.id},'nombre_baraja'=>#{@baraja.nombre},'id_creador'=>#{@creador.id},'usuario'=>#{@creador.usuario}},"
+      @service << "{'id_partida'=>#{partida.id},'cantidad_jugadores'=>#{partida.cantidad_jugadores},'usuarios'=>#{usuarios},'id_baraja'=>#{@baraja.id},'nombre_baraja'=>#{@baraja.nombre},'id_creador'=>#{@creador.id},'usuario'=>#{@creador.usuario.blank? ? 'null' : @creador.usuario}},"
     end
     
     @service << ']'
