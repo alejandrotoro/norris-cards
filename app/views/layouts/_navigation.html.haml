@@ -21,7 +21,7 @@
         %ul.nav
           - if user_signed_in?
             %li
-              = link_to('Editar', edit_user_path(current_user))
+              = link_to('Editar', edit_user_registration_path(current_user))
             %li
               = link_to('Salir', destroy_user_session_path, :method=>'delete')
           - else
