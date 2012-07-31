@@ -51,8 +51,6 @@ class PartidasController < ApplicationController
   # POST /partidas.json
   def create
     @partida = Partida.new(params[:partida])
-    @baraja = Baraja.find(params[:partida][:baraja_id])
-    @creador = User.find(params[:partida][:creador_id])
     
     @usuario_partida = UsuarioPartida.new(:partida_id => params[:partida][:id], :usuario_id => params[:partida][:creador_id])
     @usuario_partida.save
@@ -60,13 +58,7 @@ class PartidasController < ApplicationController
     respond_to do |format|
       if @partida.save
         format.html { redirect_to @partida, notice: 'Partida was successfully created.' }
-        format.json { 
-          render :json => {
-            :partida => @partida,
-            :baraja => @baraja,
-            :creador => @creador
-          }, status: :created, location: @partida 
-        }
+        format.json { render json: @partida, status: :created, location: @partida }
       else
         format.html { render action: "new" }
         format.json { render json: @partida.errors, status: :unprocessable_entity }
