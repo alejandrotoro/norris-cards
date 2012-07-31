@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730152435) do
+ActiveRecord::Schema.define(:version => 20120730222944) do
 
   create_table "barajas", :force => true do |t|
     t.string   "nombre"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120730152435) do
     t.string   "edicion"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "url_icono"
   end
 
   create_table "caracteristica_carta", :force => true do |t|

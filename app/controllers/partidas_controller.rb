@@ -3,10 +3,25 @@ class PartidasController < ApplicationController
   # GET /partidas.json
   def index
     @partidas = Partida.where(:estado => false)
-
+    @service = '['
+    @partidas.each_with_index do |partida, index|
+      @creador = User.find(partida.creador_id)
+      @baraja = Baraja.find(partida.baraja_id)
+      usuarios = UsuarioPartida.where(:partida_id => partida.id).count
+      @service << "{'id_partida'=>#{partida.id},'cantidad_jugadores'=>#{partida.cantidad_jugadores},'usuarios'=>#{usuarios}'id_baraja'=>#{@baraja.id},'nombre_baraja'=>#{@baraja.nombre},'id_creador'=>#{@creador.id},'usuario'=>#{@creador.usuario}},"
+    end
+    
+    @service << ']'
+    @service.to_json
+    
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @partidas }
+      if @partidas.count > 0
+        format.html # index.html.erb
+        format.json { render json: @service }
+      else
+        format.html
+        format.json {render json: "No hay partidas activas, puedes crear una"}
+      end
     end
   end
 
@@ -43,7 +58,10 @@ class PartidasController < ApplicationController
     @partida = Partida.new(params[:partida])
     @baraja = Baraja.find(params[:partida][:baraja_id])
     @creador = User.find(params[:partida][:creador_id])
-
+    
+    @usuario_partida = UsuarioPartida.new(:partida_id => params[:partida][:id], :usuario_id => params[:partida][:creador_id])
+    @usuario_partida.save
+    
     respond_to do |format|
       if @partida.save
         format.html { redirect_to @partida, notice: 'Partida was successfully created.' }
