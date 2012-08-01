@@ -2,6 +2,7 @@ NorrisCards::Application.routes.draw do
   
   resources :usuario_carta
   
+  match '/ganadas' => 'users#ganadas'
   match '/reset_password' => 'users#reset_password'
   match '/verify_email' => 'users#verify_email'
   match '/consulta' => 'consultas#consultas'

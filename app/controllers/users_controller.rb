@@ -100,4 +100,13 @@ class UsersController < ApplicationController
     end
   end
   
+  def ganadas
+    @user = User.find(params[:user][:id])
+    @ganadas = Partida.find_all_by_ganador_id(@user.id)
+    respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { render json: @ganadas }
+    end
+  end
+  
 end
