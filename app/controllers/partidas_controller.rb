@@ -52,11 +52,10 @@ class PartidasController < ApplicationController
   def create
     @partida = Partida.new(params[:partida])
     
-    @usuario_partida = UsuarioPartida.new(:partida_id => params[:partida][:id], :usuario_id => params[:partida][:creador_id])
-    @usuario_partida.save
-    
     respond_to do |format|
       if @partida.save
+        @usuario_partida = UsuarioPartida.new(:partida_id => @partida.id, :usuario_id => params[:partida][:creador_id])
+        @usuario_partida.save
         format.html { redirect_to @partida, notice: 'Partida was successfully created.' }
         format.json { render json: @partida, status: :created, location: @partida }
       else
