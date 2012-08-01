@@ -52,7 +52,8 @@ class UsuarioPartidasController < ApplicationController
           format.html { render action: "new" }
           format.json { render json: 'null' }
         end
-      else  
+      else
+        @partida.update_attributes(:estado => true)
         format.html { render action: "new" }
         format.json { render json: 'null' }
       end

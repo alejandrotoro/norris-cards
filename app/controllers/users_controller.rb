@@ -71,4 +71,33 @@ class UsersController < ApplicationController
     end
   end
   
+  def verify_email
+    if @user = User.find_by_email(params[:user][:email])
+      respond_to do |format|
+        format.html { redirect_to users_url }
+        format.json { render json: @user.as_json(only: [:id]) }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to users_url }
+        format.json { render json: {:id => 0} }
+      end
+    end
+  end
+  
+  def reset_password
+    @user = User.find(params[:user][:id])
+    if @user.update_attributes(:password => params[:user][:password])
+      respond_to do |format|
+        format.html { redirect_to users_url }
+        format.json { render json: @user.as_json(only: [:id, :email, :usuario]) }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to users_url }
+        format.json { render json: {:id => 0} }
+      end
+    end
+  end
+  
 end
