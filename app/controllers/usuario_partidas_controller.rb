@@ -3,10 +3,17 @@ class UsuarioPartidasController < ApplicationController
   # GET /usuario_partidas.json
   def index
     @usuario_partidas = UsuarioPartida.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @usuario_partidas }
+    
+    if @usuario_partidas.count > 0
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @usuario_partidas }
+      end
+    else
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: {:id => 0} }
+      end
     end
   end
 
