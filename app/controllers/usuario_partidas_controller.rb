@@ -57,12 +57,12 @@ class UsuarioPartidasController < ApplicationController
           format.json { render json: @usuario_partida, status: :created, location: @usuario_partida }
         else
           format.html { render action: "new" }
-          format.json { render json: 'null' }
+          format.json { render json: {:id => 0} }
         end
       else
         @partida.update_attributes(:estado => true)
         format.html { render action: "new" }
-        format.json { render json: 'null' }
+        format.json { render json: {:id => 0} }
       end
     end
   end
