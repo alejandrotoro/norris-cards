@@ -47,12 +47,18 @@ class UsuarioPartidasController < ApplicationController
   # POST /usuario_partidas
   # POST /usuario_partidas.json
   def create
-    @usuario_partida = UsuarioPartida.new(params[:usuario_partida])
+    existe = UsuarioPartida.where(:partida_id => params[:usuario_partida][:partida_id], :usuario_id => params[:usuario_partida][:usuario_id]).first
     @partida = Partida.find(params[:usuario_partida][:partida_id])
+    count = UsuarioPartida.where(:partida_id => params[:usuario_partida][:partida_id]).count
     
     respond_to do |format|
-      if @partida.cantidad_jugadores > UsuarioPartida.where(:partida_id => params[:usuario_partida][:partida_id]).count
+      if @partida.cantidad_jugadores > count && existe.nil?
+        @usuario_partida = UsuarioPartida.new(params[:usuario_partida])
         if @usuario_partida.save
+          count = count + 1
+          if @partida.cantidad_jugadores = count
+            @partida.update_attributes(:estado => true)
+          end
           format.html { redirect_to @usuario_partida, notice: 'Usuario partida was successfully created.' }
           format.json { render json: @usuario_partida, status: :created, location: @usuario_partida }
         else
@@ -60,8 +66,7 @@ class UsuarioPartidasController < ApplicationController
           format.json { render json: {:id => 0} }
         end
       else
-        @partida.update_attributes(:estado => true)
-        format.html { render action: "new" }
+        format.html { redirect_to usuario_partidas_path, notice: 'El usuario ya existe en la partida o ya se agotaron los cupos.' }
         format.json { render json: {:id => 0} }
       end
     end
